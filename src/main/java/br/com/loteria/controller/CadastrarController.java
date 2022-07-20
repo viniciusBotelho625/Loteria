@@ -3,6 +3,7 @@ package br.com.loteria.controller;
 import br.com.caelum.vraptor.Controller;
 import br.com.caelum.vraptor.Get;
 import br.com.caelum.vraptor.Path;
+import br.com.caelum.vraptor.Post;
 
 @Path("cadastrar")
 @Controller
@@ -12,4 +13,5 @@ public class CadastrarController {
 	public void cadastrar() {
 		
 	}
+	
 }

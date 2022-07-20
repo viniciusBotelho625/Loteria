@@ -1,1 +1,8 @@
-**/bootstrap
+out
+.classpath
+.project
+.settings
+.metadata
+
+target
+

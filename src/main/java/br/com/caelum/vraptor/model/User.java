@@ -2,33 +2,27 @@ package br.com.caelum.vraptor.model;
 
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 @Table(name = "users")
-public class User {
+public class User extends Model{
 	
-	//private static final long serialVersionUID = 1L;
+
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
-	
+	@NotEmpty @Size(min = 4, max = 20)
 	private String name;
+	
+	@NotEmpty @Email
 	private String email;
+	
+	@NotEmpty @Size(min = 4, max = 20)
 	private String password;
 	
-	
-	public Long getId() {
-		return id;
-	}
-	
-	public void setId(Long id) {
-		this.id = id;
-	}
 	
 	public String getName() {
 		return name;

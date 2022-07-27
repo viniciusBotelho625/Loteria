@@ -56,7 +56,7 @@
                       Login
                     </a>
                     <hr>
-                    <a href="<c:url value="cadastrar"/>" class="btn btn-google btn-user btn-block">
+                    <a href="<c:url value="register"/>" class="btn btn-google btn-user btn-block">
                       Cadastrar
                     </a>
                   </form>

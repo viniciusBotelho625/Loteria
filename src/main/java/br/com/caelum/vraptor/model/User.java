@@ -14,13 +14,13 @@ public class User extends Model{
 	
 
 	
-	@NotEmpty @Size(min = 4, max = 20)
+	@NotEmpty(message = "{user.name.empty}") @Size(min = 4, max = 20, message = "{user.name.size}")
 	private String name;
 	
 	@NotEmpty @Email
 	private String email;
 	
-	@NotEmpty @Size(min = 4, max = 20)
+	@NotEmpty(message = "{user.password.empty}") @Size(min = 4, max = 20, message = "{user.password.size}")
 	private String password;
 	
 	

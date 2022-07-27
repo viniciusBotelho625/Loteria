@@ -11,6 +11,7 @@ import br.com.caelum.vraptor.Post;
 import br.com.caelum.vraptor.Result;
 import br.com.caelum.vraptor.dao.UserDAO;
 import br.com.caelum.vraptor.model.User;
+import br.com.caelum.vraptor.validator.SimpleMessage;
 import br.com.caelum.vraptor.validator.Validator;
 
 @Path("register")
@@ -28,7 +29,9 @@ public class RegisterController {
 	}
 	
 	@Post("salvausuario")
-	public void saveUser(@Valid User user) {
+	public void saveUser(@Valid User user, String confirmPassword) {
+		boolean asPassword = confirmPassword.equals(user.getPassword());
+		validator.addIf(!asPassword, new SimpleMessage("confirmPassword", "A confirmação está diferente da senha"));
 		validator.onErrorRedirectTo(this).register();
 		userDao.insertOrUpdate(user);
 		rs.redirectTo(DashboardController.class).dashboard();
